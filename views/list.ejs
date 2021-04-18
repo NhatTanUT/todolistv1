@@ -1,0 +1,24 @@
+<%- include('header') -%>
+    <div class="box" id="heading">
+      <h1><%= listTittle %></h1>
+      <% if (listTittle !== 0 || listTittle !== 6) { %>
+        <p style="color: white">It's a working day</p>
+      <% } else { %>
+        <p style="color: white">It's a relax day</p>
+      <% } %>
+    </div>
+
+    <div class="box">
+        <% items.forEach(item => { %>
+          <div class="item">
+            <input type="checkbox">
+            <p> <%= item %> </p>
+          </div>
+        <% }); %>
+
+        <form action="/" method="post" class="item">
+          <input type="text" name="item" placeholder="Work to do" autocomplete="offno">
+          <button type="submit" name="listTittle" value= <%= listTittle %>>+</button>
+        </form>
+    </div>
+<%- include('footer') -%>
